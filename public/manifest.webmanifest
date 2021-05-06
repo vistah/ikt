@@ -1,43 +1,42 @@
 {
-  "name": "HTW-Insta Erweiterung",
-  "short_name": "HTW-Insta",
-  "start_url": "/index.html",
-  "display": "standalone",
-  "background_color": "#76B900",
-  "description": "Eine tolle HTW-Insta-PWA",
-  "lang": "de-DE",
-  "dir": "ltr",
-  "orientation": "portrait-primary",
-  "icons": [
-    {
-        "src": "/src/images/icons/fiw48x48.png",
-        "type": "image/png",
-        "sizes": "48x48"
-    },
-    {
-        "src": "/src/images/icons/fiw72x72.png",
-        "type": "image/png",
-        "sizes": "72x72"
-    },
-    {
-        "src": "/src/images/icons/fiw96x96.png",
-        "type": "image/png",
-        "sizes": "96x96"
-    },
-    {
-        "src": "/src/images/icons/fiw128x128.png",
-        "type": "image/png",
-        "sizes": "128x128"
-    },
-    {
-        "src": "/src/images/icons/fiw256x256.png",
-        "type": "image/png",
-        "sizes": "256x256"
-    },
-    {
-        "src": "/src/images/icons/fiw484x484.png",
-        "type": "image/png",
-        "sizes": "484x484"
-    }
-  ]
-}
+"short_name": "HTW-Insta",
+"name": "HTW-Insta Erweiterung",
+"lang": "en",
+"description": "Eine tolle Insta-PWA",
+"start_url": "/index",
+"background_color": "#e70053",
+"theme_color": "#00e717",
+"dir": "ltr",
+"display": "standalone",
+"orientation": "portrait-primary",
+"icons":
+[{"src": "/android-icon-192x192-dunplab-manifest-34929.png",
+"type": "image/png",
+"sizes": "192x192"},
+{"src": "/apple-icon-180x180-dunplab-manifest-34929.png",
+"type": "image/png","sizes": "180x180"},
+{"src": "/apple-icon-152x152-dunplab-manifest-34929.png",
+"type": "image/png","sizes": "152x152"},
+{"src": "/apple-icon-144x144-dunplab-manifest-34929.png",
+"type": "image/png","sizes": "144x144"},
+{"src": "/apple-icon-120x120-dunplab-manifest-34929.png",
+"type": "image/png","sizes": "120x120"},
+{"src": "/apple-icon-114x114-dunplab-manifest-34929.png",
+"type": "image/png","sizes": "114x114"},
+{"src": "/favicon-96x96-dunplab-manifest-34929.png",
+"type": "image/png","sizes": "96x96"},
+{"src": "/apple-icon-76x76-dunplab-manifest-34929.png",
+"type": "image/png","sizes": "76x76"},
+{"src": "/apple-icon-72x72-dunplab-manifest-34929.png",
+"type": "image/png","sizes": "72x72"},
+{"src": "/apple-icon-60x60-dunplab-manifest-34929.png",
+"type": "image/png","sizes": "60x60"},
+{"src": "/apple-icon-57x57-dunplab-manifest-34929.png",
+"type": "image/png","sizes": "57x57"},
+{"src": "/apple-icon-512x512-dunplab-manifest-34929.png",
+"type": "image/png","sizes": "512x512"},
+{"src": "/favicon-32x32-dunplab-manifest-34929.png",
+"type": "image/png","sizes": "32x32"},
+{"src": "/favicon-16x16-dunplab-manifest-34929.png",
+"type": "image/png","sizes": "16x16"}],
+"prefer_related_applications": "false"}

@@ -48,6 +48,7 @@
     } else {
         console.log('Service workers are not supported.');
     }
+
 </script>
 
 <div id="app">
@@ -138,7 +139,20 @@
                 <div id="shared-moments"></div>
             </div>
             <div class="floating-button">
-                <button type="button" class="btn btn-danger">+</button>
+                <button type="button" class="btn btn-danger" id="share-image-button">+
+               <!-- <script>
+                    let installPromptEvent;
+
+                    window.addEventListener('beforeinstallprompt', (event) => {
+                        // Prevent Chrome <= 67 from automatically showing the prompt
+                        event.preventDefault();
+                        // Stash the event so it can be triggered later.
+                        installPromptEvent = event;
+                        // Update the install UI to notify the user app can be installed
+                        document.querySelector('#install-button').disabled = false;
+                    });
+                </script>-->
+                </button>
             </div>
             <div id="confirmation-toast" aria-live="assertive" aria-atomic="true" aria-relevant="text"
                  class="mdl-snackbar mdl-js-snackbar">
