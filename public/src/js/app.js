@@ -10,13 +10,20 @@ if ('serviceWorker' in navigator) {
 var button = document.querySelector('#start-button');
 var output = document.querySelector('#output');
 
-button.addEventListener('click', function() {
-    // Erzeugen Sie sich hier ein Promise-Objekt und fuegen die
-    // setTimeout-Funktion in die Funktion, die dem Konstruktor uebergeben wird
+button.addEventListener('click', event => {
+    new Promise((resolve, reject) =>
+    {
+        let condition = true;
 
-    setTimeout(function() { // <- das hier soll in das Promise-Objekt
-        // "Resolve" diese Url: https://httpbin.org/ip
-    }, 1000);
+        if (condition) {
+            setTimeout(() => resolve("https://httpbin.org/ip"), 1000);
+        }
+        else{
+            setTimeout(() => reject(new Error("Das ist schlecht")), 1000);
+        }
+
+    })
+
 
     // Teil 1:
 
