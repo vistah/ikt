@@ -13,84 +13,119 @@ button.addEventListener('click', event => {
 
 
 //Teil 1
-        new Promise((resolve, reject) => {
-             let condition = true;
+ /*   new Promise((resolve, reject) => {
+        let condition = true;
 
-             if (condition) {
-                 setTimeout(() => resolve("https://httpbin.org/ip"), 1000);
-             } else {
-                 setTimeout(() => reject(new Error("Das ist schlecht")), 1000);
-             }
-         })
-            .then
-             (
-                 url => {
-                     return fetch(url, {
-                         method: 'GET',
-                         headers: {
-                             'Content-Type': 'application/json',
-                             'Accept': 'application/json'
-                         }
-                     });
-                 }
-             )
-             .then(
-                 response => {
-                     console.log(response);
-                     return response.json();
-                 }
-             )
-             .then(
-                 data => {
-                     console.log(data);
-                     document.getElementById('output').textContent = data.origin;
-                 }
-             )
-             .catch(
-                 error => console.log(error)
-             );
-//Teil 2
-        /*new Promise((resolve, reject) => {
-            let condition = true;
-
-            if (condition) {
-                setTimeout(() => resolve("https://httpbin.org/put"), 1000);
-            } else {
-                setTimeout(() => reject(new Error("Das ist schlecht")), 1000);
+        if (condition) {
+            setTimeout(() => resolve("https://httpbin.org/ip"), 1000);
+        } else {
+            setTimeout(() => reject(new Error("Das ist schlecht")), 1000);
+        }
+    })
+        .then
+        (
+            fetch('https://httpbin.org/ip', {
+                method: 'GET',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                }
+            })
+        )
+        .then(
+            response => {
+                console.log(response);
+                return response.json();
             }
-        })
-            .then
-            (
-                url => {
-                    return fetch(url, {
-                        method: 'PUT',
-                        headers: {
-                            'Content-Type': 'application/json',
-                            'Accept': 'application/json'
-                        },
-                        body: JSON.stringify({
-                            title: 'FIW!',
-                            user: 3
-                        })
-                    });
-                }
-            )
-            .then(
-                response => {
-                    console.log(response);
-                    return response.json();
-                }
-            )
-            .then(
-                data => {
-                    console.log(data);
-                    document.getElementById('output').textContent = data.title;
-                }
-            )
-            .catch(
-                error => console.log(error)
-            );*/
+        )
+        .then(
+            url => {
+                console.log(url);
+                document.getElementById('output').textContent = url.origin;
+            }
+        )
+        .catch(
+            error => console.log(error)
+        );*/
+//Teil 2
+    /*new Promise((resolve, reject) => {
+        let condition = true;
 
+        if (condition) {
+            setTimeout(() => resolve("https://httpbin.org/put"), 1000);
+        } else {
+            setTimeout(() => reject(new Error("Das ist schlecht")), 1000);
+        }
+    })
+        .then
+        (
+            url => {
+                return fetch(url, {
+                    method: 'PUT',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Accept': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        title: 'FIW!',
+                        user: 3
+                    })
+                });
+            }
+        )
+        .then(
+            response => {
+                console.log(response);
+                return response.json();
+            }
+        )
+        .then(
+            data => {
+                console.log(data);
+                document.getElementById('output').textContent = data.id;
+            }
+        )
+        .catch(
+            error => console.log(error)
+        );*/
+
+//Teil 3
+    new Promise((resolve, reject) => {
+        let condition = true;
+
+        if (condition) {
+            setTimeout(() => resolve("https://httpbin.org/ip"), 1000);
+        } else {
+            setTimeout(() => reject(new Error("Das ist schlecht")), 1000);
+        }
+    })
+        .then
+        (
+            url =>{
+                return fetch('https://httpbin.org/ip', {
+                    method: 'GET',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Accept': 'application/json'
+                    }
+                });
+            }
+        )
+        .then(
+            response => {
+                console.log(response);
+                return response.json();
+            }
+        )
+        .then(
+            url => {
+                console.log(url);
+                document.getElementById('output').textContent = url.origin;
+            }
+        )
+        .catch(
+            error => console.log(error)
+        );
 
 // Teil 1: DONE
 
@@ -126,5 +161,5 @@ button.addEventListener('click', event => {
 // erfolgreich ist (z.B. einfach die Url aendern)
 // Behandeln Sie diesen Fehler (einmal als zweites Argument von then()
 // und einmal mit catch() --> einfach Ausgabe auf Konsole)
-})
-;
+
+});

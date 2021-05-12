@@ -8,10 +8,11 @@ self.addEventListener('activate', event => {
 })
 
 self.addEventListener('fetch', event =>{
-    console.log('service worker --> fetching ...', event.request);
-    if(event.request.url.endsWith('/hello'))
+    console.log('service worker --> fetching ...', event);
+    /*if(event.request.url.endsWith('/hello'))
     {
         event.respondWith(new Response("Hello FIW!"))
-    }
+    }*/
+    event.respondWith(fetch(event.request));
 })
 
