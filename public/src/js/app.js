@@ -13,18 +13,18 @@ button.addEventListener('click', event => {
 
 
 //Teil 1
- /*   new Promise((resolve, reject) => {
+/*    new Promise((resolve, reject) => {
         let condition = true;
 
         if (condition) {
-            setTimeout(() => resolve("https://httpbin.org/ip"), 1000);
+            resolve("https://httpbin.org/ip");
         } else {
-            setTimeout(() => reject(new Error("Das ist schlecht")), 1000);
+            reject(new Error("Das ist schlecht"));
         }
     })
         .then
         (
-            fetch('https://httpbin.org/ip', {
+            url => fetch(url, {
                 method: 'GET',
                 headers: {
                     'Content-Type': 'application/json',
@@ -48,13 +48,13 @@ button.addEventListener('click', event => {
             error => console.log(error)
         );*/
 //Teil 2
-    /*new Promise((resolve, reject) => {
+/*    new Promise((resolve, reject) => {
         let condition = true;
 
         if (condition) {
-            setTimeout(() => resolve("https://httpbin.org/put"), 1000);
+            resolve("https://httpbin.org/put");
         } else {
-            setTimeout(() => reject(new Error("Das ist schlecht")), 1000);
+            reject(new Error("Das ist schlecht"));
         }
     })
         .then
@@ -91,18 +91,18 @@ button.addEventListener('click', event => {
 
 //Teil 3
     new Promise((resolve, reject) => {
-        let condition = true;
+        let condition = false;
 
-        if (condition) {
-            setTimeout(() => resolve("https://httpbin.org/ip"), 1000);
+        if (condition==true) {
+            resolve("https://httpbin.org/ip");
         } else {
-            setTimeout(() => reject(new Error("Das ist schlecht")), 1000);
+            reject({code:500, message:'Das ist schlecht'});
         }
     })
         .then
         (
             url =>{
-                return fetch('https://httpbin.org/ip', {
+                return fetch(url, {
                     method: 'GET',
                     headers: {
                         'Content-Type': 'application/json',
@@ -124,7 +124,7 @@ button.addEventListener('click', event => {
             }
         )
         .catch(
-            error => console.log(error)
+            error => console.log(error.code, error.message)
         );
 
 // Teil 1: DONE
