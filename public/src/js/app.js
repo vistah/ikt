@@ -6,10 +6,10 @@ if ('serviceWorker' in navigator) {
 }
 
 /*Aufgabe 3*/
-var button = document.querySelector('#start-button');
-var output = document.querySelector('#output');
+ /*   var button = document.querySelector('#start-button');
+    var output = document.querySelector('#output');
 
-button.addEventListener('click', event => {
+    button.addEventListener('click', event => {*/
 
 
 //Teil 1
@@ -90,7 +90,7 @@ button.addEventListener('click', event => {
         );*/
 
 //Teil 3
-    new Promise((resolve, reject) => {
+    /*new Promise((resolve, reject) => {
         let condition = false;
 
         if (condition==true) {
@@ -125,7 +125,7 @@ button.addEventListener('click', event => {
         )
         .catch(
             error => console.log(error.code, error.message)
-        );
+        );*/
 
 // Teil 1: DONE
 
@@ -161,5 +161,6 @@ button.addEventListener('click', event => {
 // erfolgreich ist (z.B. einfach die Url aendern)
 // Behandeln Sie diesen Fehler (einmal als zweites Argument von then()
 // und einmal mit catch() --> einfach Ausgabe auf Konsole)
+/*
 
-});
+});*/
