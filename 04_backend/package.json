@@ -1,14 +1,21 @@
 {
   "name": "04_backend",
   "version": "1.0.0",
-  "description": "",
+  "description": "REST-Server für posts-Datenbank",
   "main": "server.js",
   "type": "module",
   "scripts": {
     "watch": "nodemon ./server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "keywords": [
+    "IKT",
+    "PWA",
+    "REST-API",
+    "Backendend",
+    "posts"
+  ],
+  "author": "V. Stahlbaum",
   "license": "ISC",
   "dependencies": {
     "cors": "^2.8.5",
