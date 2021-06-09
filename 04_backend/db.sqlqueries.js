@@ -60,11 +60,14 @@ export const PostService = {
         });
     },
 
-    /*getTitle: async(title, result) => {
-        sql.query("SELECT title FROM posts", (err, res) => {
-            if (err) result (null, err);
-            else if (res.affectedRows == 0) result({ message: "post not found" }, null);
-            else result(null, res);
-        });
-    }*/
+    findByTitle: async(title, result) => {
+        sql.query(
+            `SELECT * FROM posts WHERE title = ?`, [title],
+            (err, res) => {
+                if (err) result(err, null);
+                else if (res.length) result(null, res);
+                else result({ message: "post not found" }, null);
+            }
+        );
+    },
 };

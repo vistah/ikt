@@ -16,9 +16,9 @@ app.get('/', (request, response) => {
 
 // Endpunkte definieren
 app.post("/posts", PostController.create); // C
+app.get("/posts/title", PostController.readOneByTitle);
 app.get("/posts", PostController.readAll); // R (all)
 app.get("/posts/:postId", PostController.readOne); // R (one)
-//app.get("/posts/title", PostController.readTitle);
 app.put("/posts/:postId", PostController.update); // U
 app.delete("/posts/:postId", PostController.delete); // D
 

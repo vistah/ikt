@@ -68,13 +68,16 @@ export const PostController = {
         });
     },
 
-    /*readTitle: (req, res) => {
-        PostService.getTitle(req.params.title, (err, result) => {
+    readOneByTitle: (req, res) => {
+        console.log(req.body);
+        const title = req.body.title;
+        console.log('title:', title);
+        PostService.findByTitle(title, (err, result) => {
             if (err)
                 res.status(500).send({
                     message: err.message || "Some error occurred while getting one post",
                 });
             else res.json(result);
         });
-    },*/
+    },
 };
