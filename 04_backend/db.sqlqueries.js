@@ -46,7 +46,7 @@ export const PostService = {
     },
     //Funktion "remove"
     remove: async(id, result) => {
-        sql.query("DELETE FROM posts WHERE id = ?", id, (err, res) => {
+        sql.query("DELETE FROM posts WHERE id = ?", [id], (err, res) => {
             if (err) result(null, err);
             else if (res.affectedRows == 0) result({ message: "post not found" }, null);
             else result(null, res);
@@ -61,8 +61,7 @@ export const PostService = {
     },
 
     findByTitle: async(title, result) => {
-        sql.query(
-            `SELECT * FROM posts WHERE title = ?`, [title],
+        sql.query("SELECT * FROM posts WHERE title = 'first post'", [title],
             (err, res) => {
                 if (err) result(err, null);
                 else if (res.length) result(null, res);
