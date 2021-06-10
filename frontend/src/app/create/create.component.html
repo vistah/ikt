@@ -28,7 +28,7 @@
       </mat-form-field>
 
     </form>
-    <button mat-stroked-button (click)="onSubmit()" color="default" class="button" [disabled]="!formGroup.valid">
+    <button mat-stroked-button (click)="onSubmit()" (click)="myFunction()" color="default" class="button" [disabled]="!formGroup.valid">
       Hinzufügen
     </button>
   </div>

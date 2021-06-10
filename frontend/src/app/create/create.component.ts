@@ -35,6 +35,9 @@ export class CreateComponent implements OnInit {
   get inp_image(): FormControl {
     return this.formGroup.get('inp_image') as FormControl;
   }
+   myFunction() {
+     alert("Sie haben einen Post erstellt!");
+   }
 
   onSubmit(): void {
     const post = {

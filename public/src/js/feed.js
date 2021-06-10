@@ -34,24 +34,22 @@ shareImageButton.addEventListener('click', openCreatePostModal);
 
 closeCreatePostModalButton.addEventListener('click', closeCreatePostModal);
 
-function createCard(data) {
+function createCard() {
     let cardWrapper = document.createElement('div');
     cardWrapper.className = 'shared-moment-card mdl-card mdl-shadow--2dp';
     let cardTitle = document.createElement('div');
     cardTitle.className = 'mdl-card__title';
-    let image = new Image();
-    image.src = "data:image/png;base64," + data.image;
-    cardTitle.style.backgroundImage = 'url('+image.src+')';
+    cardTitle.style.backgroundImage = 'url("/src/images/htw-gebaeude-h.jpg")';
     cardTitle.style.backgroundSize = 'cover';
     cardTitle.style.height = '180px';
     cardWrapper.appendChild(cardTitle);
     let cardTitleTextElement = document.createElement('h2');
     cardTitleTextElement.className = 'mdl-card__title-text';
-    cardTitleTextElement.textContent = data.title;
+    cardTitleTextElement.textContent = 'Vor der HTW-Mensa';
     cardTitle.appendChild(cardTitleTextElement);
     let cardSupportingText = document.createElement('div');
     cardSupportingText.className = 'mdl-card__supporting-text';
-    cardSupportingText.textContent = data.location;
+    cardSupportingText.textContent = 'HTW Berlin';
     cardSupportingText.style.textAlign = 'center';
     cardWrapper.appendChild(cardSupportingText);
     //dynamisch erzeugte DOM-Elemente werden registriert, damit sie von Material Design Lite automatisch verwaltet werden
@@ -59,17 +57,10 @@ function createCard(data) {
     sharedMomentsArea.appendChild(cardWrapper);
 }
 
-function updateUI(data) {
-    for(let i=0; i < data.length; i++)
-    {
-        createCard(data[i]);
-    }
-}
-
-fetch('http://localhost:3000/posts')
-    .then((res) => {
+fetch('https://httpbin.org/get')
+    .then(function(res) {
         return res.json();
     })
-    .then((data) => {
+    .then(function(data) {
         createCard();
     });
