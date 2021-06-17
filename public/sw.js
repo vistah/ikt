@@ -1,8 +1,8 @@
 importScripts('/src/js/idb.js');
 importScripts('/src/js/db.js');
 
-const CURRENT_STATIC_CACHE = 'static-v3';
-const CURRENT_DYNAMIC_CACHE = 'dynamic-v3';
+const CURRENT_STATIC_CACHE = 'static-v7';
+const CURRENT_DYNAMIC_CACHE = 'dynamic-v7';
 
 const STATIC_FILES = [
     '/',
@@ -71,6 +71,7 @@ self.addEventListener('fetch', event => {
                                         writeData('posts', data[key]);
                                        // if(data[key].id === 5) deleteOneData('posts', 5);
                                     }
+                                    deleteByTitle('posts','post');
                                 });
                     // hier Anfrage an http://localhost:3000/posts behandeln
                     return res;

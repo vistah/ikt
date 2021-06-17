@@ -55,12 +55,29 @@ function deleteOneData(st, id) {
 }
 
 function deleteByTitle(st, title) {
-    db
+    return db
         .then( dbPosts => {
-            let tx = dbPosts.transaction(st, 'readwrite');
+            let tx = dbPosts.transaction(st, 'readonly');
             let store = tx.objectStore(st);
-            store.delete(title);
-            return tx.done;
+            let myIndex = store.index('id');
+            myIndex.getAllKeys()
+                .then(allKeys => {
+                    for (let key of allKeys)
+                    {
+                        let value = myIndex.get(key)
+                        .then(value =>
+                        {
+                            console.log('delete title', value.title);
+                            if(value.title.includes(title))
+                            {
+                                console.log('treffer', value.title);
+                                console.log('id ', value.id);
+                                console.log('Key ', key);
+                                deleteOneData(st, key);
+                            }
+                        })
+                    }
+                })
         })
         .then( () => {
             console.log('Title deleted ...');
