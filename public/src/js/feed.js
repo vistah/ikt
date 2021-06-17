@@ -73,10 +73,10 @@ fetch('http://localhost:3000/posts')
 if('indexedDB' in window) {
     readAllData('posts')
         .then( data => {
-            networkDataReceived = true;
+            if(!networkDataReceived) {
                 console.log('From cache ...', data);
                 updateUI(data);
-
+            }
         })
 }
 
